@@ -1,0 +1,17 @@
+O padrão de projeto Command é utilizado para encapsular uma solicitação como um objeto, permitindo que você parametrize os clientes com diferentes solicitações, enfileire ou registre solicitações e implemente operações desfazer. No contexto de um gerenciador de downloads em Java, podemos ter as seguintes classes:
+
+1) Comando: É uma interface que define a estrutura para todos os comandos possíveis no gerenciador de downloads. Ela declara o método executar() que será implementado pelas classes concretas de comando.
+
+2) ComandoAdicionarDownload: É uma classe concreta que implementa a interface Comando e representa o comando de adicionar um download. Ela contém a lógica específica para adicionar um download ao gerenciador.
+
+3) ComandoPausarDownload: É uma classe concreta que implementa a interface Comando e representa o comando de pausar um download. Ela contém a lógica específica para pausar um download no gerenciador.
+
+4) ComandoRetomarDownload: É uma classe concreta que implementa a interface Comando e representa o comando de retomar um download. Ela contém a lógica específica para retomar um download pausado no gerenciador.
+
+5) ComandoCancelarDownload: É uma classe concreta que implementa a interface Comando e representa o comando de cancelar um download. Ela contém a lógica específica para cancelar um download no gerenciador.
+
+6) GerenciadorDownload: É a classe que atua como o receiver das operações de download. Ela possui os métodos para adicionar, pausar, retomar e cancelar downloads, além de qualquer outra lógica relacionada. Essa classe também possui um método para executar um comando recebido.
+
+7) Principal: É a classe invocadora que utiliza os comandos e o gerenciador de downloads para realizar as operações de gerenciamento. Nessa classe, podem ser criados objetos de comando e associados a operações específicas, como adicionar, pausar, retomar ou cancelar downloads.
+
+8) Casos de testes: Os casos de teste para o gerenciador de downloads com o padrão Command visam verificar o correto funcionamento das operações de adicionar, pausar, retomar e cancelar downloads.
